@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>贪吃蛇案例</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #map{
+      width: 600px;
+      height: 600px;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+<button id="btnStart">开始游戏</button>
+<div id="map"></div>
+
+<script src="food.js"></script>
+<script src="snake.js"></script>
+<script src="game.js"></script>
+<script>
+  //两个对象
+  //蛇
+  //食物
+  var map = document.getElementById("map");
+  var btnStart = document.getElementById("btnStart");
+
+  var game = new Game(map);
+
+  function getRandom(min,max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  btnStart.onclick = function () {
+    game.startGame();
+  }
+</script>
+</body>
+</html>
